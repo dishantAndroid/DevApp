@@ -44,7 +44,6 @@ class CategoryAdapter(val context: Context, val list: ArrayList<Category>) :
 //            }
 
 //            val localBroadcastManager = LocalBroadcastManager.getInstance(context)
-            context.startService(Intent(context, MusicPlayerService::class.java))
 
             val localIntent = Intent("MY_CUSTOM_ACTION")
             localIntent.putExtra(

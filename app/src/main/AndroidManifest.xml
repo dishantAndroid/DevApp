@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.practice.devapp">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -26,15 +31,27 @@
             </intent-filter>
         </activity>
 
-<!--        <receiver-->
-<!--            android:name=".reciever.AirPlaneBroadCast"-->
-<!--            android:exported="false">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="MY_CUSTOM_ACTION" />-->
-<!--            </intent-filter>-->
-<!--        </receiver>-->
+        <!--        <receiver-->
+        <!--            android:name=".reciever.AirPlaneBroadCast"-->
+        <!--            android:exported="false">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="MY_CUSTOM_ACTION" />-->
+        <!--            </intent-filter>-->
+        <!--        </receiver>-->
 
 
+        <service android:name=".service.MusicPlayerService" />
+
+        <service android:name=".service.MusicPlayerIntentService" />
+
+        <service
+            android:name=".service.MusicPlayerJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+
+        <service
+            android:name=".service.MusicPlayerJobIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
 </manifest>
